@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Setup - Mohannad Medical Clinic</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; margin-bottom: 20px; }
+        .section { margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-radius: 5px; border-left: 4px solid #667eea; }
+        .subsection { margin-bottom: 20px; padding: 15px; background: white; border-radius: 5px; border-left: 3px solid #764ba2; }
+        code { background: #e0e0e0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        button { background: #667eea; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px 5px 10px 0; }
+        button:hover { background: #764ba2; }
+        textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; font-family: Arial; }
+        audio { width: 100%; margin: 10px 0; }
+        ul { margin-left: 20px; line-height: 2; }
+        .note { background: #fff3cd; padding: 10px; border-radius: 5px; margin: 10px 0; }
+        .success { background: #d4edda; padding: 10px; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Audio Setup for Mohannad Medical Clinic</h1>
+        
+        <div class="section">
+            <h2>Option 1: Use Text-to-Speech (Easiest)</h2>
+            <div class="subsection">
+                <h3>Generate Welcome Message Using Text-to-Speech</h3>
+                <p>Paste your message below, and click the button to hear it:</p>
+                <textarea id="textInput" rows="6" placeholder="Enter your clinic message here...">Welcome to Mohannad Medical Clinic, located in Al-Moruj District, Riyadh. We provide comprehensive healthcare services with experienced doctors and modern facilities. Book your appointment today!</textarea>
+                <br>
+                <button onclick="speakText()">🔊 Generate Audio</button>
+                <button onclick="downloadAudio()">📥 Download as MP3</button>
+                <div id="audioOutput"></div>
+            </div>
+            
+            <div class="note">
+                💡 <strong>How to save this audio:</strong>
+                <ol>
+                    <li>Right-click the audio player below</li>
+                    <li>Select "Save audio as..."</li>
+                    <li>Save as <code>welcome_message.mp3</code></li>
+                    <li>Place in <code>assets/audio/</code> folder</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Option 2: Free Background Music Resources</h2>
+            <div class="subsection">
+                <h3>Recommended Free Music Sites:</h3>
+                <ul>
+                    <li><strong>Bensound</strong> - https://www.bensound.com
+                        <br><small>Choose royalty-free background music for videos/websites</small></li>
+                    <li><strong>Incompetech</strong> - https://www.incompetech.com
+                        <br><small>Kevin MacLeod's free music library (hundreds of tracks)</small></li>
+                    <li><strong>Free Stock Music</strong> - https://www.free-stock-music.com
+                        <br><small>Curated royalty-free music</small></li>
+                    <li><strong>Pixabay Music</strong> - https://pixabay.com/music
+                        <br><small>Browse and download free background music</small></li>
+                    <li><strong>YouTube Audio Library</strong> - https://www.youtube.com/audiolibrary
+                        <br><small>Free music for creators (with YouTube account)</small></li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                ✨ <strong>Music recommendations for medical clinic:</strong>
+                <ul style="margin-left: 20px;">
+                    <li>Calm and professional background</li>
+                    <li>Soft instrumental music</li>
+                    <li>Corporate/business style</li>
+                    <li>Duration: 2-3 minutes for video</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Option 3: Record Your Own Voiceover</h2>
+            <div class="subsection">
+                <h3>Using Audacity (Free Software)</h3>
+                <ol>
+                    <li><strong>Download Audacity:</strong> https://www.audacityteam.org</li>
+                    <li><strong>Open Audacity</strong> and create new project</li>
+                    <li><strong>Click Record Button</strong> (red circle)</li>
+                    <li><strong>Read your script clearly:</strong>
+                        <div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                            "Welcome to Mohannad Medical Clinic, located in the beautiful Al-Moruj District of Riyadh. 
+                            We are dedicated to providing world-class healthcare with experienced physicians and cutting-edge technology. 
+                            Our team includes specialists in general medicine, pediatrics, cardiology, and more. 
+                            We offer 24/7 emergency services, modern surgical facilities, and comprehensive diagnostic services. 
+                            Trust us with your health. Book your appointment with us today."
+                        </div>
+                    </li>
+                    <li><strong>Stop Recording</strong> when done</li>
+                    <li><strong>Export as MP3:</strong> File → Export → MP3</li>
+                    <li><strong>Save as:</strong> <code>voiceover.mp3</code></li>
+                    <li><strong>Place in:</strong> <code>assets/audio/</code> folder</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Option 4: Using Online Tools</h2>
+            <div class="subsection">
+                <h3>Free Online Text-to-Speech Generators:</h3>
+                <ul>
+                    <li><strong>Murf.ai</strong> - https://murf.ai (Professional AI voices)</li>
+                    <li><strong>Google Text-to-Speech</strong> - https://support.google.com/accessibility/answer/7347564</li>
+                    <li><strong>Natural Reader</strong> - https://www.naturalreader.com</li>
+                    <li><strong>TTSReader</strong> - https://ttsreader.com (Simple and fast)</li>
+                    <li><strong>Voice Maker</strong> - https://voicemaker.in (Multiple languages)</li>
+                </ul>
+                
+                <p style="margin-top: 10px;"><strong>Steps:</strong></p>
+                <ol>
+                    <li>Paste your text into the tool</li>
+                    <li>Select professional voice (American English recommended)</li>
+                    <li>Adjust speed and pitch if available</li>
+                    <li>Generate audio</li>
+                    <li>Download as MP3</li>
+                    <li>Save to <code>assets/audio/</code></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📂 Audio File Organization</h2>
+            <div class="subsection">
+                <h3>Recommended File Structure:</h3>
+                <code style="display: block; padding: 10px; background: #e0e0e0; border-radius: 5px; margin: 10px 0;">
+assets/audio/<br>
+├── welcome_message.mp3<br>
+├── background_music.mp3<br>
+├── clinic_introduction.mp3<br>
+└── footer_message.mp3
+                </code>
+                
+                <h3 style="margin-top: 20px;">How to Use in Website:</h3>
+                <code style="display: block; padding: 10px; background: #e0e0e0; border-radius: 5px; margin: 10px 0;">
+&lt;audio controls&gt;<br>
+  &lt;source src="assets/audio/welcome_message.mp3" type="audio/mpeg"&gt;<br>
+  Your browser does not support the audio tag.<br>
+&lt;/audio&gt;
+                </code>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Audio Integration Checklist</h2>
+            <div class="subsection">
+                <ul>
+                    <li>☐ Record/Generate voiceover (2-3 minutes)</li>
+                    <li>☐ Export as MP3 format</li>
+                    <li>☐ Name file clearly (e.g., clinic_welcome.mp3)</li>
+                    <li>☐ Place in assets/audio/ folder</li>
+                    <li>☐ File size optimized (&lt;10MB preferred)</li>
+                    <li>☐ Audio quality tested (clear and professional)</li>
+                    <li>☐ Download background music from recommended sites</li>
+                    <li>☐ Add audio player to video (optional)</li>
+                    <li>☐ Test all audio playback on different devices</li>
+                    <li>☐ Ensure proper volume levels</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>✨ Advanced: Add Audio to Video</h2>
+            <div class="subsection">
+                <h3>Using DaVinci Resolve (Free)</h3>
+                <ol>
+                    <li>Download: https://www.blackmagicdesign.com/products/davinciresolve</li>
+                    <li>Import your clinic video</li>
+                    <li>Import background music</li>
+                    <li>Import voiceover audio</li>
+                    <li>Arrange audio tracks on timeline</li>
+                    <li>Adjust audio levels and mixing</li>
+                    <li>Add transitions and effects</li>
+                    <li>Export as clinic_tour.mp4</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>Professional Audio Settings:</h3>
+                <ul>
+                    <li><strong>Sample Rate:</strong> 44.1 kHz or 48 kHz</li>
+                    <li><strong>Bit Depth:</strong> 16-bit or 24-bit</li>
+                    <li><strong>Format:</strong> MP3 or AAC</li>
+                    <li><strong>Bitrate:</strong> 128-320 kbps</li>
+                    <li><strong>Volume Level:</strong> -3dB to -6dB (safe for all devices)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="success">
+            ✅ <strong>Your website is ready!</strong> Just add your audio files to complete it.
+            All HTML, CSS, and JavaScript are configured. Audio integration is optional but recommended.
+        </div>
+    </div>
+
+    <script>
+        function speakText() {
+            const text = document.getElementById('textInput').value;
+            if (!text) {
+                alert('Please enter text first!');
+                return;
+            }
+            
+            // Use Web Speech API
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 0.9; // Slower speed for clarity
+            utterance.pitch = 1;
+            utterance.volume = 1;
+            
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.speak(utterance);
+            
+            alert('Playing audio! Listen to preview it.');
+        }
+
+        function downloadAudio() {
+            alert('To save the audio:\n\n1. Click the speaker icon in your browser\n2. Look for audio player below\n3. Right-click and select "Save audio as..."\n4. Save as .mp3 file\n\nOr use online TTS tools listed above to download directly.');
+        }
+
+        // Add audio player if text is spoken
+        document.getElementById('textInput').addEventListener('change', function() {
+            if (!document.getElementById('audioPlayer')) {
+                const audio = document.createElement('audio');
+                audio.id = 'audioPlayer';
+                audio.controls = true;
+                document.getElementById('audioOutput').appendChild(audio);
+            }
+        });
+    </script>
+</body>
+</html>
